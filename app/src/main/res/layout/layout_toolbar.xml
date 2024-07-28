@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layoutToolBar"
+    android:layout_width="match_parent"
+    android:layout_height="?actionBarSize"
+    android:layout_marginHorizontal="@dimen/_15sdp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <ImageView
+        android:id="@+id/ivBack"
+        android:layout_width="@dimen/_24sdp"
+        android:layout_height="@dimen/_24sdp"
+        android:clickable="true"
+        android:src="@drawable/ic_back"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="@color/white"
+        android:focusable="true"
+        android:contentDescription="@null" />
+    <ImageView
+        android:layout_marginEnd="@dimen/_10sdp"
+        android:id="@+id/ivPlus"
+        android:layout_width="@dimen/_24sdp"
+        android:layout_height="@dimen/_24sdp"
+        android:clickable="true"
+        android:visibility="gone"
+        android:src="@drawable/ic_add"
+        app:layout_constraintBottom_toBottomOf="parent"
+       app:layout_constraintEnd_toStartOf="@+id/ivMenu"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="@color/white"
+        android:focusable="true"
+        android:contentDescription="@null" />
+    <ImageView
+        android:layout_marginEnd="@dimen/_10sdp"
+        android:id="@+id/ivMenu"
+        android:layout_width="@dimen/_24sdp"
+        android:layout_height="@dimen/_24sdp"
+        android:clickable="true"
+        android:src="@drawable/ic_menu"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="@color/white"
+        android:focusable="true"
+        android:contentDescription="@null" />
+</androidx.constraintlayout.widget.ConstraintLayout>

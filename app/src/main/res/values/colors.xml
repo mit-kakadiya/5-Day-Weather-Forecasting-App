@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="sky_blue">#007AFF</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="weather_bg">#87CEEB</color>
+    <color name="hint_text">#c1d0f0</color>
+    <color name="track_color">#6981a3</color>
+    <color name="circle_color">#ffd183</color>
+    <color name="gradient_start">#FF5733</color>
+    <color name="dark_gray">#2D2E2E</color>
+
+</resources>

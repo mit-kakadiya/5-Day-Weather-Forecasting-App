@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">Weather</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="enter_city">Enter city</string>
+    <string name="day_forecst">5-day forecst</string>
+    <string name="turn_on_location_service">Turn on location service</string>
+    <string name="aqi_35">AQI 35</string>
+    <string name="search_city_for_weather">Search city for weather</string>
+    <string name="enter_your_city">Enter your city</string>
+    <string name="data_not_found">data not found</string>
+    <string name="offline_stored_city_s_weather">offline stored city\'s weather</string>
+    <string name="network_is_not_available">Network is not available</string>
+    <string name="clear_35_29">Clear 35°/29°</string>
+    <string name="_5_day_forecast">5-day forecast</string>
+    <string name="more_details">More Details</string>
+    <string name="_29">29°</string>
+    <string name="today">Today</string>
+    <string name="tomorrow">Tomorrow</string>
+    <string name="offline_data_is_not_available">Offline Data is not available</string>
+</resources>

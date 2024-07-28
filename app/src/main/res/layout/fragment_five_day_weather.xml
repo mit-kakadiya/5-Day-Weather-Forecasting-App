@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="fiveDayVm"
+            type="com.example.evalutionpractical.ui.viewModel.FiveDayWeatherViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/day_forecst"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_25sdp"
+            app:layout_constraintBottom_toTopOf="@+id/tvDay1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <TextView
+            android:gravity="center_horizontal"
+            android:visibility="gone"
+            android:id="@+id/tvDay1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:singleLine="true"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_12sdp"
+            app:layout_constraintEnd_toStartOf="@+id/tvDay2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvTitle" />
+
+        <TextView
+            android:visibility="gone"
+            android:id="@+id/tvDate1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            android:drawablePadding="@dimen/_12sdp"
+            android:gravity="center_horizontal"
+            android:singleLine="true"
+            android:textColor="@color/circle_color"
+            android:textSize="@dimen/_8sdp"
+            app:drawableBottomCompat="@drawable/baseline_sunny_24"
+            app:drawableTint="@color/circle_color"
+            app:layout_constraintBottom_toTopOf="@+id/lineChart"
+           app:layout_constraintEnd_toStartOf="@+id/tvDate2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvDay1" />
+
+
+        <TextView
+            android:gravity="center_horizontal"
+            android:visibility="gone"
+            android:id="@+id/tvDay2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:singleLine="true"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_12sdp"
+            app:layout_constraintBottom_toBottomOf="@id/tvDay1"
+            app:layout_constraintEnd_toStartOf="@id/tvDay3"
+            app:layout_constraintStart_toEndOf="@+id/tvDay1"
+            app:layout_constraintTop_toTopOf="@id/tvDay1" />
+
+        <TextView
+            android:visibility="gone"
+            android:id="@+id/tvDate2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            android:drawablePadding="@dimen/_12sdp"
+            android:gravity="center_horizontal"
+            android:singleLine="true"
+            android:textColor="@color/circle_color"
+            android:textSize="@dimen/_8sdp"
+            app:drawableBottomCompat="@drawable/baseline_sunny_24"
+            app:drawableTint="@color/circle_color"
+            app:layout_constraintBottom_toTopOf="@+id/lineChart"
+            app:layout_constraintStart_toEndOf="@+id/tvDate1"
+            app:layout_constraintEnd_toStartOf="@+id/tvDate3"
+            app:layout_constraintTop_toBottomOf="@+id/tvDay2" />
+
+
+        <TextView
+            android:gravity="center_horizontal"
+            android:visibility="gone"
+            android:id="@+id/tvDay3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:singleLine="true"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_12sdp"
+            app:layout_constraintBottom_toBottomOf="@id/tvDay1"
+            app:layout_constraintEnd_toStartOf="@id/tvDay4"
+            app:layout_constraintStart_toEndOf="@+id/tvDay2"
+            app:layout_constraintTop_toTopOf="@id/tvDay1" />
+
+        <TextView
+            android:visibility="gone"
+            android:id="@+id/tvDate3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            android:drawablePadding="@dimen/_12sdp"
+            android:gravity="center_horizontal"
+            android:singleLine="true"
+            android:textColor="@color/circle_color"
+            android:textSize="@dimen/_8sdp"
+            app:drawableBottomCompat="@drawable/baseline_sunny_snowing_24"
+            app:drawableTint="@color/circle_color"
+            app:layout_constraintBottom_toTopOf="@+id/lineChart"
+            app:layout_constraintStart_toEndOf="@+id/tvDate2"
+            app:layout_constraintEnd_toStartOf="@+id/tvDate4"
+            app:layout_constraintTop_toBottomOf="@+id/tvDay3" />
+
+
+        <TextView
+            android:gravity="center_horizontal"
+            android:visibility="gone"
+            android:id="@+id/tvDay4"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:singleLine="true"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_12sdp"
+            app:layout_constraintBottom_toBottomOf="@id/tvDay1"
+            app:layout_constraintEnd_toStartOf="@id/tvDay5"
+            app:layout_constraintStart_toEndOf="@+id/tvDay3"
+            app:layout_constraintTop_toTopOf="@id/tvDay1" />
+
+        <TextView
+            android:visibility="gone"
+            android:id="@+id/tvDate4"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            android:drawablePadding="@dimen/_12sdp"
+            android:gravity="center_horizontal"
+            android:singleLine="true"
+            android:textColor="@color/circle_color"
+            android:textSize="@dimen/_8sdp"
+            app:drawableBottomCompat="@drawable/baseline_cloudy_snowing_24"
+            app:drawableTint="@color/circle_color"
+            app:layout_constraintBottom_toTopOf="@+id/lineChart"
+            app:layout_constraintStart_toEndOf="@+id/tvDate3"
+            app:layout_constraintEnd_toStartOf="@+id/tvDate5"
+            app:layout_constraintTop_toBottomOf="@+id/tvDay4" />
+
+
+        <TextView
+            android:gravity="center_horizontal"
+            android:visibility="gone"
+            android:id="@+id/tvDay5"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:singleLine="true"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_12sdp"
+            app:layout_constraintBottom_toBottomOf="@id/tvDay1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/tvDay4"
+            app:layout_constraintTop_toTopOf="@id/tvDay1" />
+
+        <TextView
+            android:visibility="gone"
+            android:id="@+id/tvDate5"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            android:drawablePadding="@dimen/_12sdp"
+            android:gravity="center_horizontal"
+            android:singleLine="true"
+            android:textColor="@color/circle_color"
+            android:textSize="@dimen/_8sdp"
+            app:drawableBottomCompat="@drawable/baseline_cloudy_snowing_24"
+            app:drawableTint="@color/circle_color"
+            app:layout_constraintBottom_toTopOf="@+id/lineChart"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/tvDay5"
+            app:layout_constraintTop_toBottomOf="@+id/tvDay5" />
+
+        <com.github.mikephil.charting.charts.LineChart
+            android:id="@+id/lineChart"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_200sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvDate1" />
+
+        <TextView
+            android:visibility="gone"
+            android:id="@+id/tvSpeed1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:drawablePadding="@dimen/_2sdp"
+            android:gravity="center_vertical"
+            android:singleLine="true"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_8sdp"
+            app:drawableStartCompat="@drawable/navigation_resize"
+            app:drawableTint="@color/dark_gray"
+            app:layout_constraintEnd_toStartOf="@+id/tvSpeed2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/lineChart" />
+
+        <TextView
+            android:visibility="gone"
+            android:id="@+id/tvSpeed2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:drawablePadding="@dimen/_2sdp"
+            android:gravity="center_vertical"
+            android:singleLine="true"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_8sdp"
+            app:drawableStartCompat="@drawable/navigation_resize"
+            app:drawableTint="@color/dark_gray"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/tvSpeed3"
+            app:layout_constraintStart_toEndOf="@+id/tvSpeed1"
+            app:layout_constraintTop_toTopOf="@+id/tvSpeed1" />
+
+        <TextView
+            android:visibility="gone"
+            android:id="@+id/tvSpeed3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:drawablePadding="@dimen/_2sdp"
+            android:gravity="center_vertical"
+            android:singleLine="true"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_8sdp"
+            app:drawableStartCompat="@drawable/navigation_resize"
+            app:drawableTint="@color/dark_gray"
+            app:layout_constraintEnd_toStartOf="@+id/tvSpeed4"
+            app:layout_constraintStart_toEndOf="@+id/tvSpeed2"
+            app:layout_constraintTop_toTopOf="@+id/tvSpeed1" />
+
+        <TextView
+            android:visibility="gone"
+            android:id="@+id/tvSpeed4"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:drawablePadding="@dimen/_2sdp"
+            android:gravity="center_vertical"
+            android:singleLine="true"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_8sdp"
+            app:drawableStartCompat="@drawable/navigation_resize"
+            app:drawableTint="@color/dark_gray"
+            app:layout_constraintEnd_toStartOf="@+id/tvSpeed5"
+            app:layout_constraintStart_toEndOf="@+id/tvSpeed3"
+            app:layout_constraintTop_toTopOf="@+id/tvSpeed1" />
+
+        <TextView
+            android:visibility="gone"
+            android:id="@+id/tvSpeed5"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:drawablePadding="@dimen/_2sdp"
+            android:gravity="center_vertical"
+            android:singleLine="true"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_8sdp"
+            app:drawableStartCompat="@drawable/navigation_resize"
+            app:drawableTint="@color/dark_gray"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/tvSpeed4"
+            app:layout_constraintTop_toTopOf="@+id/tvSpeed1" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

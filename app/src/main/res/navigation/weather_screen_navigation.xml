@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/wheather_screen_navigation"
+    app:startDestination="@id/oneDayWeatherFragment">
+
+    <fragment
+        android:id="@+id/oneDayWeatherFragment"
+        android:name="com.example.evalutionpractical.ui.fragment.OneDayWeatherFragment"
+        android:label="fragment_one_day_weather"
+        tools:layout="@layout/fragment_one_day_weather" >
+        <action
+            android:id="@+id/action_oneDayWeatherFragment_to_fiveDayWeatherFragment"
+            app:destination="@id/fiveDayWeatherFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/fiveDayWeatherFragment"
+        android:name="com.example.evalutionpractical.ui.fragment.FiveDayWeatherFragment"
+        android:label="fragment_five_day_weather"
+        tools:layout="@layout/fragment_five_day_weather" />
+</navigation>

@@ -1,0 +1,322 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="oneDayWeatherVm"
+            type="com.example.evalutionpractical.ui.viewModel.OneDayWeatherViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <TextView
+            android:id="@+id/tvCity"
+            style="@style/Style_TextView_Regular"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@={oneDayWeatherVm.cityName}"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_15sdp"
+            app:layout_constraintBottom_toTopOf="@+id/tvLocation"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvLocation"
+            style="@style/Style_TextView_Small"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_4sdp"
+            android:text="@string/turn_on_location_service"
+            android:textColor="@color/hint_text"
+            android:textSize="@dimen/_10sdp"
+            app:drawableEndCompat="@drawable/ic_arrow_right_resize"
+            app:drawableTint="@color/hint_text"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvCity" />
+
+        <TextView
+            android:id="@+id/tvTemp"
+            style="@style/Style_TextView_Regular"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@={oneDayWeatherVm.curruntDayTemp}"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_95sdp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvLocation" />
+
+        <TextView
+            android:id="@+id/tvClear"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/clear_35_29"
+            android:textColor="@color/hint_text"
+            android:textSize="@dimen/_15sdp"
+            app:layout_constraintBottom_toTopOf="@+id/tvAqi"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvTemp" />
+
+        <TextView
+            android:id="@+id/tvAqi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:background="@drawable/text_bg"
+            android:drawablePadding="@dimen/_4sdp"
+            android:padding="@dimen/_6sdp"
+            android:text="@string/aqi_35"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_15sdp"
+            app:drawableStartCompat="@drawable/baseline_energy_savings_leaf_24"
+            app:drawableTint="@color/white"
+            app:layout_constraintBottom_toTopOf="@+id/constraintLayout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvClear" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_50sdp"
+            android:layout_marginBottom="@dimen/_10sdp"
+            android:background="@drawable/container_bg"
+            android:paddingHorizontal="@dimen/_10sdp"
+            android:paddingBottom="@dimen/_20sdp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvAqi">
+
+            <TextView
+                android:id="@+id/tvforecast"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:drawablePadding="@dimen/_4sdp"
+                android:padding="@dimen/_6sdp"
+                android:text="@string/_5_day_forecast"
+                android:textColor="@color/hint_text"
+                android:textSize="@dimen/_15sdp"
+                app:drawableStartCompat="@drawable/baseline_calendar_month_24"
+                app:drawableTint="@color/hint_text"
+                app:layout_constraintBottom_toTopOf="@+id/tvDay1"
+                app:layout_constraintEnd_toStartOf="@+id/tvMoreDetails"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tvMoreDetails"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="84dp"
+                android:layout_marginBottom="2dp"
+                android:drawablePadding="@dimen/_4sdp"
+                android:gravity="center_vertical"
+                android:padding="@dimen/_6sdp"
+                android:text="@string/more_details"
+                android:textColor="@color/hint_text"
+                android:textSize="@dimen/_12sdp"
+                app:drawableRightCompat="@drawable/baseline_arrow_right_24"
+                app:drawableTint="@color/hint_text"
+                app:layout_constraintBottom_toBottomOf="@+id/tvforecast"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/tvforecast"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tvDay1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:padding="@dimen/_6sdp"
+                android:singleLine="true"
+                android:text="@string/today"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_15sdp"
+                app:layout_constraintEnd_toStartOf="@+id/tvDay1temp1"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvforecast" />
+
+
+            <TextView
+                android:id="@+id/tvDay1temp1"
+                android:layout_width="wrap_content"
+                android:layout_height="24dp"
+                android:layout_marginEnd="@dimen/_5sdp"
+                android:drawablePadding="@dimen/_20sdp"
+                android:text="@string/_29"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_12sdp"
+                app:drawableStartCompat="@drawable/baseline_sunny_24"
+                app:drawableTint="@color/circle_color"
+                app:layout_constraintBottom_toBottomOf="@+id/tvDay1"
+                app:layout_constraintEnd_toStartOf="@+id/cnDay1SeekBar"
+                app:layout_constraintStart_toEndOf="@+id/tvDay1"
+                app:layout_constraintTop_toTopOf="@+id/tvDay1" />
+
+            <androidx.appcompat.widget.AppCompatSeekBar
+                android:id="@+id/cnDay1SeekBar"
+                android:layout_width="@dimen/_60sdp"
+                android:layout_height="@dimen/_8sdp"
+                android:background="@drawable/seekbar_track_selector"
+                android:progressDrawable="@drawable/seekbar_track_selector"
+                app:layout_constraintBottom_toBottomOf="@+id/tvDay1"
+                app:layout_constraintEnd_toStartOf="@+id/tvDay1temp2"
+                app:layout_constraintStart_toEndOf="@+id/tvDay1temp1"
+                app:layout_constraintTop_toTopOf="@+id/tvDay1" />
+
+            <TextView
+                android:id="@+id/tvDay1temp2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:text="@={oneDayWeatherVm.dayOneTemp}"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_12sdp"
+                app:layout_constraintBottom_toBottomOf="@+id/tvDay1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/cnDay1SeekBar"
+                app:layout_constraintTop_toTopOf="@+id/tvDay1" />
+
+
+            <TextView
+                android:id="@+id/tvDay2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:padding="@dimen/_6sdp"
+                android:singleLine="true"
+                android:text="@string/tomorrow"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_15sdp"
+                app:layout_constraintEnd_toStartOf="@+id/tvDay2temp1"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvDay1" />
+
+            <TextView
+                android:id="@+id/tvDay2temp1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_5sdp"
+                android:drawablePadding="@dimen/_20sdp"
+                android:text="@string/_29"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_12sdp"
+                app:drawableStartCompat="@drawable/baseline_sunny_24"
+                app:drawableTint="@color/circle_color"
+                app:layout_constraintBottom_toBottomOf="@+id/tvDay2"
+                app:layout_constraintEnd_toStartOf="@+id/cnDay2SeekBar"
+                app:layout_constraintStart_toEndOf="@+id/tvDay2"
+                app:layout_constraintTop_toTopOf="@+id/tvDay2" />
+
+            <androidx.appcompat.widget.AppCompatSeekBar
+                android:id="@+id/cnDay2SeekBar"
+                android:layout_width="@dimen/_60sdp"
+                android:layout_height="@dimen/_8sdp"
+                android:background="@drawable/seekbar_track_selector"
+                android:progressDrawable="@drawable/seekbar_track_selector"
+                app:layout_constraintBottom_toBottomOf="@+id/tvDay2"
+                app:layout_constraintEnd_toStartOf="@+id/tvDay2temp2"
+                app:layout_constraintStart_toEndOf="@+id/tvDay2temp1"
+                app:layout_constraintTop_toTopOf="@id/tvDay2" />
+
+            <TextView
+                android:id="@+id/tvDay2temp2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:text="@={oneDayWeatherVm.dayTwoTemp}"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_12sdp"
+                app:layout_constraintBottom_toBottomOf="@id/tvDay2"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/cnDay2SeekBar"
+                app:layout_constraintTop_toTopOf="@id/tvDay2" />
+
+            <TextView
+                android:id="@+id/tvDay3"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:padding="@dimen/_6sdp"
+                android:singleLine="true"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_15sdp"
+                app:layout_constraintEnd_toStartOf="@+id/tvDay3temp1"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvDay2" />
+
+            <TextView
+                android:id="@+id/tvDay3temp1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_5sdp"
+                android:drawablePadding="@dimen/_20sdp"
+                android:text="@string/_29"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_12sdp"
+                app:drawableStartCompat="@drawable/baseline_cloudy_snowing_24"
+                app:drawableTint="@color/circle_color"
+                app:layout_constraintBottom_toBottomOf="@id/tvDay3"
+                app:layout_constraintEnd_toStartOf="@+id/cnDay3SeekBar"
+                app:layout_constraintStart_toEndOf="@+id/tvDay3"
+                app:layout_constraintTop_toTopOf="@id/tvDay3"
+                app:layout_constraintVertical_bias="0.533" />
+
+            <androidx.appcompat.widget.AppCompatSeekBar
+                android:id="@+id/cnDay3SeekBar"
+                android:layout_width="@dimen/_60sdp"
+                android:layout_height="@dimen/_8sdp"
+                android:background="@drawable/seekbar_track_selector"
+                android:progressDrawable="@drawable/seekbar_track_selector"
+                app:layout_constraintBottom_toBottomOf="@id/tvDay3"
+                app:layout_constraintEnd_toStartOf="@+id/tvDay3temp2"
+                app:layout_constraintStart_toEndOf="@+id/tvDay3temp1"
+                app:layout_constraintTop_toTopOf="@id/tvDay3" />
+
+            <TextView
+                android:id="@+id/tvDay3temp2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:text="@={oneDayWeatherVm.dayThreeTemp}"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_12sdp"
+                app:layout_constraintBottom_toBottomOf="@id/tvDay3"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/cnDay3SeekBar"
+                app:layout_constraintTop_toTopOf="@id/tvDay3" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnNext"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:backgroundTint="#9ca4bb"
+                android:onClick="@{()->oneDayWeatherVm.clickOnNextButton()}"
+                android:paddingVertical="@dimen/_10sdp"
+                android:text="@string/_5_day_forecast"
+                android:textColor="@color/white"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvDay3" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</layout>
