@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/on_boarding_bg"
+        android:fitsSystemWindows="true"
+        tools:context=".ui.activities.OnBoardingActivity">
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/pagerView"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:overScrollMode="never"
+            android:scrollIndicators="none"
+            android:scrollbarFadeDuration="0"
+            app:layout_constraintBottom_toTopOf="@+id/indicator"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.zhpan.indicator.IndicatorView
+            android:id="@+id/indicator"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:layout_marginBottom="@dimen/_20sdp"
+            app:layout_constraintBottom_toTopOf="@+id/btnGetStarted"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/pagerView"
+            app:vpi_orientation="horizontal"
+            app:vpi_slide_mode="worm"
+            app:vpi_slider_checked_color="#4878c2"
+            app:vpi_slider_normal_color="@color/hint_text"
+            app:vpi_slider_radius="@dimen/_4sdp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnGetStarted"
+            style="@style/StyleButton_Regular_bordered"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_15sdp"
+            android:layout_marginBottom="@dimen/_15sdp"
+            android:text="Get Started"
+            android:textSize="@dimen/_16ssp"
+           app:layout_constraintBottom_toBottomOf="parent"
+          />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

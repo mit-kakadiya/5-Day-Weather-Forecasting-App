@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="offlineStoredDataVm"
+            type="com.example.evalutionpractical.ui.viewModel.OfflineStoredDataViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/curved_shape_bg"
+        android:paddingHorizontal="@dimen/_10sdp">
+
+        <TextView
+            android:id="@+id/tvSelectCity"
+            style="@style/Style_TextView_Regular"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:text="@string/offline_stored_city_s_weather"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_20ssp"
+            app:layout_constraintEnd_toStartOf="@id/ivClose"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/ivClose"
+            android:layout_width="@dimen/_24sdp"
+            android:layout_height="@dimen/_24sdp"
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:clickable="true"
+            android:contentDescription="@null"
+            android:focusable="true"
+            android:onClick="@{()->offlineStoredDataVm.onCloseButtonClick()}"
+            android:src="@drawable/baseline_close_24"
+            app:layout_constraintBottom_toBottomOf="@+id/tvSelectCity"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/tvSelectCity"
+            app:layout_constraintTop_toTopOf="@id/tvSelectCity" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvData"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_380sdp"
+            android:layout_marginTop="@dimen/_12sdp"
+            android:clipToPadding="false"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvSelectCity"
+            app:layout_constraintVertical_bias="0.0" />
+
+            <TextView
+                android:id="@+id/tvDataNotFound"
+                style="@style/Style_TextView_Regular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/data_not_found"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_14ssp"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

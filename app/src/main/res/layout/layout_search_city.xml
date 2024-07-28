@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="searchCityVm"
+            type="com.example.evalutionpractical.ui.viewModel.SearchCityViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/curved_shape_bg"
+        android:paddingHorizontal="@dimen/_10sdp">
+
+        <TextView
+            android:id="@+id/tvSelectCity"
+            style="@style/Style_TextView_Regular"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:text="@string/search_city_for_weather"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_20ssp"
+            app:layout_constraintEnd_toStartOf="@id/ivClose"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/ivClose"
+            android:layout_width="@dimen/_24sdp"
+            android:layout_height="@dimen/_24sdp"
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:clickable="true"
+            android:contentDescription="@null"
+            android:focusable="true"
+            android:onClick="@{()->searchCityVm.onCloseButtonClick()}"
+            android:src="@drawable/baseline_close_24"
+            app:layout_constraintBottom_toBottomOf="@+id/tvSelectCity"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/tvSelectCity"
+            app:layout_constraintTop_toTopOf="@id/tvSelectCity" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/conSearch"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_30sdp"
+            android:background="@drawable/container_text_bg"
+            app:layout_constraintTop_toBottomOf="@id/tvSelectCity">
+
+            <EditText
+                android:layout_marginStart="@dimen/_20sdp"
+                android:textColorHint="@color/white"
+                android:id="@+id/edSearch"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_8sdp"
+                android:layout_marginVertical="@dimen/_6sdp"
+                android:autofillHints=""
+                android:background="@drawable/search_bar_bg"
+                android:drawablePadding="@dimen/_8sdp"
+                android:hint="@string/enter_your_city"
+                android:inputType="text"
+                android:paddingVertical="@dimen/_8sdp"
+                android:paddingStart="@dimen/_15sdp"
+                android:paddingEnd="@dimen/_20sdp"
+                android:text="@={searchCityVm.cityName}"
+                android:textColor="@color/white"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/ivSearch"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="RtlSymmetry" />
+
+            <ImageView
+                android:id="@+id/ivSearch"
+                android:layout_width="@dimen/_24sdp"
+                android:layout_height="@dimen/_24sdp"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:clickable="true"
+                android:contentDescription="@null"
+                android:focusable="true"
+                android:onClick="@{()->searchCityVm.onSearchButtonClick()}"
+                android:src="@drawable/baseline_search_24"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/edSearch"
+                app:layout_constraintTop_toTopOf="parent"
+                app:tint="@color/white" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvData"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_380sdp"
+            android:layout_marginTop="@dimen/_12sdp"
+            android:clipToPadding="false"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/conSearch"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <TextView
+            android:id="@+id/tvDataNotFound"
+            style="@style/Style_TextView_Regular"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:layout_marginBottom="@dimen/_200sdp"
+            android:text="@string/data_not_found"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_14ssp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/conSearch" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
